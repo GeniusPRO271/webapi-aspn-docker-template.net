@@ -1,0 +1,23 @@
+# This is a generated file. Not intended for manual editing.
+version: "3.4"
+services:
+  webapi-dev:
+    build:
+      context: "/Users/benjamintoro/Desktop/GitHub/BackEndAPI/BackEndProject"
+      dockerfile: "Dockerfile"
+      target: "build"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net7.0/BackEndProject.dll"
+    environment:
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+      NUGET_PACKAGES: "/Users/benjamintoro/.nuget/packages"
+      NUGET_FALLBACK_PACKAGES: "/Users/benjamintoro/.nuget/packages"
+    image: "backendproject:dev"
+    ports: []
+    volumes:
+    - "/Users/benjamintoro/.nuget/packages:/root/.nuget/fallbackpackages"
+    - "/Users/benjamintoro/Desktop/GitHub/BackEndAPI/BackEndProject:/app:rw"
+    - "/Users/benjamintoro/Desktop/GitHub/BackEndAPI/BackEndProject:/src:rw"
+    working_dir: "/app"
