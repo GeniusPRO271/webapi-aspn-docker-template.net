@@ -10,9 +10,9 @@ public class DishController : ControllerBase
 {
 
     private readonly ILogger<AuthController> _logger;
-    private readonly APIDBcontext _context;
+    private readonly APIDBContext _context;
 
-    public DishController(ILogger<AuthController> logger, APIDBcontext context)
+    public DishController(ILogger<AuthController> logger, APIDBContext context)
     {
         _logger = logger;
         _context = context;

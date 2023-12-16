@@ -1,15 +1,12 @@
-using System.ComponentModel.DataAnnotations;
+using BackEndProject.Data.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace BackEndProject.Data.Models
 {
-    public interface IBaseEntity
+    public class Role : IdentityRole<Guid>, IBaseEntity
     {
-        [Key]
-        public Guid Id { get; set; }
         public DateTime CreateDateTime { get; set; }
-
         public DateTime ModifyDateTime { get; set; }
-
         public DateTime? DeleteDate { get; set; }
     }
 }
